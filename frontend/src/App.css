@@ -1,0 +1,1111 @@
+/* ===================================================
+   1. الإعدادات العامة وتخطيط التطبيق (Global & Layout)
+   =================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: #0b1329;
+  color: #f8fafc;
+  direction: rtl;
+  overflow-x: hidden;
+}
+
+/* تنسيق إشعارات التوست */
+.custom-toast {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 12px 18px !important;
+  border-radius: 8px !important;
+  font-size: 0.95rem !important;
+  direction: rtl;
+}
+
+.app-main-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0b1329;
+  overflow-x: hidden;
+}
+
+.app-page-content {
+  flex: 1;
+  min-width: 0;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.app-page-content.full-width {
+  padding: 0;
+}
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  font-size: 1.1rem;
+  color: #38bdf8;
+}
+
+/* ===================================================
+   2. القائمة الجانبية (Sidebar)
+   =================================================== */
+.app-sidebar {
+  width: 250px;
+  min-width: 250px;
+  flex-shrink: 0;
+  background-color: #0f172a;
+  border-left: 1px solid #1e293b;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  box-sizing: border-box;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+.brand-icon {
+  font-size: 1.5rem;
+}
+
+.sidebar-brand h2 {
+  font-size: 1.3rem;
+  color: #38bdf8;
+  margin: 0;
+}
+
+.sidebar-user-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #1e293b;
+  padding: 0.75rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.user-avatar-circle {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  color: #ffffff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.1rem;
+}
+
+.user-text-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.user-full-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f8fafc;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.user-role-badge {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.sidebar-nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #94a3b8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background-color: #1e293b;
+  color: #f8fafc;
+}
+
+.sidebar-link.active {
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.sidebar-footer {
+  border-top: 1px solid #1e293b;
+  padding-top: 1rem;
+}
+
+.sidebar-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar-logout-btn:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+  border-color: #ef4444;
+}
+
+/* ===================================================
+   3. لوحة التحكم والتحليلات (Dashboard & Analytics)
+   =================================================== */
+.dashboard-tabs-bar {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.scope-tab-btn {
+  background-color: #0f172a;
+  color: #94a3b8;
+  border: 1px solid #1e293b;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.scope-tab-btn:hover {
+  background-color: #1e293b;
+  color: #f8fafc;
+}
+
+.scope-tab-btn.active {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  font-weight: bold;
+}
+
+.dashboard-analytics-section {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.analytics-card {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.analytics-card h2 {
+  color: #f8fafc;
+  margin-bottom: 0.4rem;
+  font-size: 1.3rem;
+}
+
+.analytics-card h3 {
+  color: #f8fafc;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.analytics-card p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.mini-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stat-box {
+  background-color: #1e293b;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-bottom: 0.25rem;
+}
+
+.stat-number {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #f8fafc;
+}
+
+.stat-number.green-text {
+  color: #10b981;
+}
+
+.no-data-text {
+  color: #64748b;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.chart-wrapper-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.custom-legend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.legend-label {
+  color: #94a3b8;
+}
+
+.legend-value {
+  color: #f8fafc;
+  margin-right: auto;
+}
+
+/* ===================================================
+   4. النماذج الموحدة (Unified Forms)
+   =================================================== */
+.create-project-section,
+.create-task-section {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.create-project-section h3,
+.create-task-section h3 {
+  color: #f8fafc;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.create-project-form,
+.create-task-form {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.create-project-form input,
+.create-task-form input,
+.create-task-form select {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  color: #f8fafc;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  flex: 1;
+  min-width: 160px;
+  transition: border-color 0.2s ease;
+}
+
+.create-project-form input:focus,
+.create-task-form input:focus,
+.create-task-form select:focus {
+  border-color: #38bdf8;
+}
+
+.create-project-form button,
+.create-task-form button,
+.add-task-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.create-project-form button:hover,
+.create-task-form button:hover,
+.add-task-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.ai-generate-btn {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: #ffffff;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.ai-generate-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #6d28d9, #9333ea);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+}
+
+.ai-generate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===================================================
+   5. كروت المشاريع (Project Cards)
+   =================================================== */
+.projects-list-section .section-title {
+  color: #f8fafc;
+  margin-bottom: 1rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.project-card {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  border-color: #38bdf8;
+}
+
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-card-header h3 {
+  color: #f8fafc;
+  font-size: 1.15rem;
+}
+
+.project-percentage {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+.project-desc {
+  color: #94a3b8;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background-color: #1e293b;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-top: 0.2rem;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2563eb, #38bdf8);
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+.project-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+.tasks-count-info {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.view-tasks-link {
+  font-size: 0.85rem;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.view-tasks-link:hover {
+  text-decoration: underline;
+}
+/* حاوية مؤشر التحميل العام */
+.loading-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  gap: 16px;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* حركة دوران المؤشر */
+.spinner {
+  width: 42px;
+  height: 42px;
+  border: 3.5px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===================================================
+   6. تفاصيل المشروع وبطاقات المهام (Project Details)
+   =================================================== */
+.details-page-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-sizing: border-box;
+}
+
+.details-header {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.details-header-info h2 {
+  font-size: 1.5rem;
+  color: #f8fafc;
+  margin-bottom: 0.3rem;
+}
+
+.details-header-info p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.progress-info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+.progress-track {
+  width: 100%;
+  height: 8px;
+  background-color: #1e293b;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2563eb, #38bdf8);
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+.details-back-btn {
+  display: inline-block;
+  color: #38bdf8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 1.2rem;
+  font-weight: 500;
+}
+
+.details-back-btn:hover {
+  text-decoration: underline;
+}
+
+.tasks-display-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.tasks-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.tasks-header-row h3 {
+  font-size: 1.3rem;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.filter-buttons-group {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.filter-btn {
+  background-color: #0f172a;
+  color: #94a3b8;
+  border: 1px solid #1e293b;
+  padding: 0.5rem 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background-color: #1e293b;
+  color: #f8fafc;
+}
+
+.filter-btn.active {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  font-weight: bold;
+}
+
+/* بطاقات المهام العريضة الموحدة */
+.tasks-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.task-row-box {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background-color: #0f172a !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 12px !important;
+  padding: 1.5rem 2rem !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 2rem !important;
+  transition: border-color 0.2s ease;
+}
+
+.task-row-box:hover {
+  border-color: #334155 !important;
+}
+
+.task-row-box.completed-task {
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+.task-main-details {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.4rem !important;
+  flex: 1 !important;
+}
+
+.task-heading {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+}
+
+.task-heading h4 {
+  font-size: 1.15rem !important;
+  color: #f8fafc !important;
+  margin: 0 !important;
+  font-weight: 700 !important;
+}
+
+.task-heading h4.strike-title {
+  text-decoration: line-through !important;
+  color: #64748b !important;
+}
+
+.task-priority-pill {
+  font-size: 0.75rem !important;
+  padding: 0.25rem 0.6rem !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+}
+
+.priority-high {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.priority-medium {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.priority-low {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.task-desc-text {
+  color: #94a3b8 !important;
+  font-size: 0.9rem !important;
+  margin: 0.2rem 0 !important;
+}
+
+.task-footer-meta {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.5rem !important;
+  font-size: 0.85rem !important;
+  color: #64748b !important;
+  margin-top: 0.3rem !important;
+}
+
+.assigned-tag {
+  background-color: rgba(30, 41, 59, 0.7) !important;
+  padding: 0.2rem 0.6rem !important;
+  border-radius: 6px !important;
+  color: #94a3b8 !important;
+}
+
+.task-side-controls {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  flex-shrink: 0 !important;
+}
+
+.task-select-status {
+  background-color: #0b1329 !important;
+  border: 1px solid #334155 !important;
+  color: #f8fafc !important;
+  padding: 0.6rem 1.2rem !important;
+  border-radius: 8px !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  outline: none !important;
+  cursor: pointer !important;
+}
+
+.task-delete-button {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+  color: #ef4444 !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+  padding: 0.6rem 1.1rem !important;
+  border-radius: 8px !important;
+  font-size: 0.9rem !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease;
+}
+
+.task-delete-button:hover {
+  background-color: rgba(239, 68, 68, 0.25) !important;
+  border-color: #ef4444 !important;
+}
+
+.empty-tasks-card {
+  background-color: #0f172a;
+  border: 1px dashed #334155;
+  padding: 3rem;
+  border-radius: 12px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 1rem;
+}
+/* شريط البحث والفلترة */
+.filter-controls-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 200px;
+  background-color: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #3b82f6;
+}
+
+.priority-select-filter {
+  background-color: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+}
+
+/* ===================================================
+   7. شاشات تسجيل الدخول والتسجيل والملف الشخصي(Auth Pages) 
+   =================================================== */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle at top, #1e293b 0%, #0b1329 100%);
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.auth-card {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  padding: 2.5rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-brand-logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #38bdf8;
+  margin-bottom: 0.8rem;
+}
+
+.auth-header h2 {
+  color: #f8fafc;
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.auth-subtitle {
+  color: #94a3b8;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.auth-error-box {
+  background-color: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #f87171;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.auth-form input,
+.auth-form select {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  color: #f8fafc;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+  border-color: #38bdf8;
+}
+
+.auth-submit-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.auth-submit-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.auth-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #1e293b;
+  font-size: 0.88rem;
+  color: #94a3b8;
+}
+
+.auth-link {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.profile-container {
+  max-width: 500px;
+  margin: 40px auto;
+  background-color: #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.profile-container h2 {
+  margin-bottom: 24px;
+  font-size: 1.4rem;
+  color: #f8fafc;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.profile-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profile-form label {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.profile-form input {
+  background-color: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #f8fafc;
+  outline: none;
+}
+
+.profile-form input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.save-btn {
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.save-btn:hover {
+  background-color: #2563eb;
+}
+
+/* ===================================================
+   8. التجاوب مع الجوال والشاشات الصغيرة
+   =================================================== */
+@media (max-width: 1024px) {
+  .dashboard-analytics-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-main-layout {
+    flex-direction: column;
+  }
+
+  .app-sidebar {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    position: relative;
+    border-left: none;
+    border-bottom: 1px solid #1e293b;
+    padding: 1rem;
+  }
+
+  .sidebar-nav-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .app-page-content {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .tasks-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .filter-buttons-group {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  /* بطاقة المهمة على الجوال */
+  .task-row-box {
+    padding: 1rem !important;
+    gap: 1rem !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .task-main-details {
+    width: 100% !important;
+  }
+
+  .task-footer-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem !important;
+  }
+
+  .task-side-controls {
+    width: 100% !important;
+    justify-content: flex-end !important;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #1e293b;
+  }
+
+  .task-select-status {
+    flex: 1;
+  }
+}
