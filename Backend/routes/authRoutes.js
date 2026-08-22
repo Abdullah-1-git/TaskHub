@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { registerUser, loginUser, getAllUsers, updateProfile } = require('../controllers/authController');
-const { protect } = require('../middleware/authMiddleware');
+const { protect } = require('../Middleware/authMiddleware');
 
 // مسار تسجيل مستخدم جديد
 router.post('/register', registerUser);
