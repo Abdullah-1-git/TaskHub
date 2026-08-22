@@ -8,7 +8,7 @@ const {
   deleteTask,
   generateAITasks,
 } = require("../controllers/taskController");
-const { protect } = require("../middleware/authMiddleware");
+const { protect } = require("../Middleware/authMiddleware");
 
 // مسار إنشاء مهمة جديدة
 router.post("/", protect, createTask);

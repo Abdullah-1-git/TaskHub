@@ -7,7 +7,7 @@ const {
   updateProject,
   deleteProject,
 } = require("../controllers/projectController");
-const { protect, adminOnly } = require("../middleware/authMiddleware");
+const { protect, adminOnly } = require("../Middleware/authMiddleware");
 
 
 router.post("/", protect, adminOnly, createProject);
